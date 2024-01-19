@@ -1,0 +1,119 @@
+doctype html
+html(lang="ko")
+	head
+		meta(charset="utf-8")
+		title 일기장
+		link(rel= 'stylesheet', type='text/css' href="../css/reset.css")
+		link(rel= 'stylesheet', type='text/css' href="../css/diary_pc.css")
+		link(rel= 'stylesheet', type='text/css' href="../css/diary_mobile.css")
+		link(rel="preconnect" href="https://fonts.googleapis.com")
+		link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+		link(href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&family=Yantramanav:wght@300;400;500;700&display=swap" rel="stylesheet")
+		link(rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css")
+		link(rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png")
+		link(rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png")
+		link(rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png")
+		link(rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png")
+		link(rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png")
+		link(rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png")
+		link(rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png")
+		link(rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png")
+		link(rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png")
+		link(rel="icon" type="image/png" sizes="192x192"  href="../img/android-icon-192x192.png")
+		link(rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png")
+		link(rel="icon" type="image/png" sizes="96x96" href="../img/favicon-96x96.png")
+		link(rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png")
+		link(rel="manifest" href="../img/manifest.json")
+		meta(name="msapplication-TileColor" content="#ffffff")
+		meta(name="msapplication-TileImage" content="../img/ms-icon-144x144.png")
+		meta(name="theme-color" content="#ffffff")
+	body
+		.wrap
+			section.dateContentWrap
+				article.yearZone
+					i.xi-angle-left#yearPrev
+					p.diaryYear#diaryYear
+					i.xi-angle-right#yearNext
+				article.monthZone#monthZone
+			section.listContentWrap
+				article.titleMonth#titleMonth
+				article.listWrap
+					.diaryBoxWrap 
+						.diaryBox#diaryBox
+					.diaryWriteBtnWrap 
+						button(class="diaryWriteBtn", id="diaryWriteBtn", name="diaryWriteBtn")
+							p New
+			section.wrapCRUD
+				section.writeContentWrap
+					form(action="http://kkms4001.iptime.org:10188/create/", method="post" class="postData")
+						article.titleWriteWrap
+							article.leftTitleWrap#leftTitleWrap
+								.titleCharacter
+							article.rightTitleWrap
+								.dateWrap
+									p Date.
+									.dateS
+										input(type="date", name="diaryDate" id="diaryDate" class="diaryDate" value="")
+								.weatherWrap
+									p Weather.
+									.weatherS
+										.weatherSun#sun
+											div
+										.weatherCloud#cloud
+											div
+										.weatherRain#rain
+											div
+										.weatherSnow#snow
+											div
+								.moodWrap
+									p Mood.
+									.moodS
+										.moodHappy#happy
+											div
+										.moodSad#sad
+											div
+										.moodSoso#soso
+											div
+										.moodAngry#angry
+											div
+						article.bodyWriteWrap
+							.wContentWrap
+								p.titleP
+									input(type="text", name="diaryTitle", id="diaryTitle", class="diaryTitle", value="" wrap="hard" ,escapeXml="false", placeholder="제목을 입력해주세요.")
+								p.bodyP
+									textarea(name="diaryBody", id="diaryBody", cols="20", rows="2", wrap="hard", value="",escapeXml="false", class="diaryBody", placeholder="내용을 입력해주세요.")
+								p.btnP
+									button(type="button" id="cancelBtn" class="cancelBtn") Cancel
+									button(type="button", name="saveBtn", id="saveBtn") Save
+									button(type="button", name="updateBtn", id="updateBtn") Update
+				.deleteModal
+					.popUpMent
+						p Delete ?
+						.selectYesNo
+							p No 
+							p Yes
+				section.readWrap#readWrap
+					article.titleWriteWrap
+						article.leftTitleWrap#leftTitleWrap
+							.titleCharacter2
+						article.rightTitleWrap
+							.dateWrap
+								p Date.
+								.dateS#dateS
+							.weatherWrap
+								p Weather.
+								.weatherS#weatherS
+							.moodWrap
+								p Mood.
+								.moodS#moodS
+					article.bodyWriteWrap
+						.readSpace
+							p.titleP
+								span.readTitle#readTitle
+							p.bodyP
+								span.readBody#readBody
+							p.btnP
+								button(type="button" id="cancelBtnRead" class="cancelBtnRead") Cancel
+								button(type="button" id="deleteBtnRead" class="deleteBtnRead") Delete
+								button(type="button" id="modifyBtn" class="modifyBtn") Modify
+		script(src="../js/diary.js")

@@ -1,0 +1,860 @@
+/**  
+font-family: 'Nanum Gothic', sans-serif;
+
+font-family: 'Yantramanav', sans-serif;
+**/
+
+$breakpoint-mobile: 335px;
+$breakpoint-tablet: 758px;
+$breakpoint-desktop: 1024px;
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-tablet}) {
+    @content;
+  }
+}
+
+
+@mixin flexCCC {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flexCCCC {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@mixin flexCSC {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+@mixin flexRSC {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+@mixin flexRSBC {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flexRSAC {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+}
+@mixin flexCSAC {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+@mixin flexCSBC {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin flexCSS{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+
+html{
+  width: 100%;
+  height: 100%;
+  @include flexCCC;
+}
+body{
+  width: 100%;
+  height: 100%;
+  @include flexCCC;
+  background: #00000014; 
+}
+
+
+.selectValue{
+  filter:drop-shadow(0px 0px 2px #a8ff79);
+  transform: scale(1.2);
+}
+.selectList{
+  background-color: #bdc0ed8a;
+}
+
+
+
+@include desktop{
+  .wrap{
+    width:90%;
+    height: 90%;
+    @include flexRSC;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+    .dateContentWrap{
+      z-index: 200;
+      background: linear-gradient(120deg, #353A5F, #7981e3);
+      width: 20%;
+      height:100%;
+      .yearZone{
+        width: 100%;
+        height: 10%;
+        @include flexRSAC;
+        &>i{
+          color: #fff;
+          font-size: 17px;
+          cursor: pointer;
+        }
+        &>i:nth-child(3){
+          transform: scale(0);
+        }
+        &>p{
+          @include flexCCC;
+          &>span{
+            color: #fff;
+            font-size: 30px;
+            text-align: center;
+            font-family: 'Yantramanav', sans-serif;
+          }
+        }
+      }
+      .monthZone{
+        width: 100%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        .monthBoxWrap{
+          width: 100%;
+          @include flexCCC;
+          .monthBox{
+            width: 70%;
+            padding: 17px; 
+            @include flexRSBC;
+            &>p{
+              color: #fff;
+              font-family: 'Yantramanav', sans-serif;
+            }
+            &>p:nth-child(1){
+              font-size: 19px;
+              text-shadow: 1px 1px 5px #0000001a;
+            }
+            &>p:nth-child(2){
+              font-size: 18px;
+            }
+          }
+          &:hover{
+            background-color: #bdc0ed8a;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .listContentWrap {
+      transition: all 0.3s;
+      width: 80%;
+      height:100%;
+      background: #fff;
+      box-shadow: 1px 1px 16px rgb(0 0 0 / 16%);
+      z-index: 100;
+      @include flexCSAC;
+      overflow: hidden;
+      .titleMonth {
+        @include flexCCC;
+        width: 100%;
+        height: 13%;
+        &>p{
+          font-size: 45px;
+          font-weight: 600;
+          font-family: 'Yantramanav', sans-serif;
+        }
+      }
+      .listWrap {
+        width: 100%;
+        height: 87%;
+        @include flexCCCC;
+        .diaryBoxWrap::-webkit-scrollbar {
+          display: none;
+        }
+        .diaryBoxWrap{
+          padding: 10px;
+          width: 80%;
+          height: 80%;
+          overflow-y: scroll;
+          -ms-overflow-style: none; /* 인터넷 익스플로러 */
+          scrollbar-width: none; /* 파이어폭스 */
+          .diaryBox{
+            width: 100%;
+            .listBox{
+              transition: all 0.2s;
+              width: 100%;
+              height: 100px;
+              margin-bottom: 15px;
+              border-radius: 15px;
+              background: #6376bd1c;
+              box-shadow: 3px 4px 8px #15161a1f;
+              @include flexRSBC;
+              .listDateBox{
+                width: 20%;
+                height: 100%;
+                @include flexCCCC;
+                .dateBox{
+                  line-height: 26px;
+                  @include flexCCCC;
+                  padding: 7px;
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 50%;
+                  background: linear-gradient(134deg, #2f3980, #676dbb);
+                  &>p{
+                    font-family: 'Yantramanav', sans-serif;
+                    color: #fff;
+                  }
+                  &>p:nth-child(1){
+                    margin-bottom: -6px;
+                    font-weight: 600;
+                    font-size: 16px;
+                  }
+                  &>p:nth-child(2){
+                    font-size: 20px;
+                  }
+                }
+              }
+              .listTitleBox{
+                width: 80%;
+                height: 100%;
+                @include flexCCCC;
+                &>p{
+                  font-family: 'Nanum Gothic', sans-serif;
+                  width: 90%;
+                  overflow: hidden;
+                  white-space: nowrap;
+                  text-overflow: ellipsis;
+                  word-break: break-all;
+                  font-size: 23px;
+                }
+              }
+              &:hover{
+                transition: all 0.2s;
+                background: rgb(76 101 192 / 29%);
+                cursor: pointer;
+              }
+            }
+          }
+        }
+        .diaryWriteBtnWrap{
+          width:100%;
+          height:20%;
+          @include flexCCCC;
+          &>button{
+            width: 9vw;
+            height: 40%;
+            border: 0;
+            background: linear-gradient(134deg, #444d92, #7d84e2);
+            border-radius: 18px;
+            @include flexCCCC;
+            &>p{
+              font-family: 'Nanum Gothic', sans-serif;
+              color:#fff;
+              font-size: 20px
+            }
+            &:hover{
+              cursor: pointer;
+              background: #2e385e;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+    .wrapCRUD{
+      transition: all 0.3s;
+      overflow: hidden;
+      position: relative;
+      width: 0%;
+      height:100%;
+      background: url('../img/morning.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      .writeContentWrap{
+        position: absolute;
+        width: 100%;
+        height:100%;
+        &>form{
+          font-family: 'Nanum Gothic', sans-serif;
+          width: 100%;
+          height: 100%;
+          .titleWriteWrap{
+            width: 100%;
+            height: 30%;
+            @include flexRSC;
+            .leftTitleWrap{
+              width: 32%;
+              height:100%;
+              @include flexCCCC;
+              .titleCharacter{
+                cursor: pointer;
+                display: inline-block;
+                width: 90%;
+                height: 90%;
+                background: url('../img/sun_bg.png');
+                filter: drop-shadow(1px 3px 2px #fff3da);
+                background-position: center center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                transform: scale(1);
+                transition: all 0.2s;
+              }
+              .titleCharacter:hover{
+                transform: scale(1.1);
+                transition: all 0.2s;
+              }
+            }
+            .rightTitleWrap{
+              width: 65%;
+              height: 93%;
+              .dateWrap{
+                @include flexCCC;
+                width: 100%;
+                height: 33.3%;
+                margin-bottom: 5px;
+                &>p {
+                  font-family: 'Nanum Gothic', sans-serif;
+                  text-align: center;
+                  width:30%;
+                  font-size: 19px;
+                  color: #333;
+                  text-shadow: 3px 2px 5px rgb(255 125 125 / 50%);
+                }
+                .dateS{
+                  font-size: 19px;
+                  @include flexCCC;
+                  text-align: center;
+                  width: 70%;
+                  height: 100%;
+                  border-radius: 20px;
+                  background: rgba(255, 255, 255, 0.5);
+                  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+                  .diaryDate{
+                    background: transparent;
+                    border: 0;
+                    font-size: 16px;
+                    font-family: 'Nanum Gothic', sans-serif;
+                  }
+                }
+              }
+              .weatherWrap{
+                width:100%;
+                height: 33.3%;
+                @include flexCCC;
+                margin-bottom: 8px;
+                &>p{
+                  font-family: 'Nanum Gothic', sans-serif;
+                  text-align: center;
+                  width:30%;
+                  font-size: 16px;
+                  color: #333;
+                  text-shadow: 3px 2px 5px rgb(255 125 125 / 50%);
+                }
+                .weatherS{
+                  width:70%;
+                  height:100%;
+                  @include flexRSBC;
+                  border-radius: 20px;
+                  background: rgba(255, 255, 255, 0.5);
+                  box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+                  &>div{
+                    @include flexRSAC;
+                    width: 25%;
+                    height: 100%;
+                    @include flexCCC;
+                  }
+                  &>div:nth-child(1){
+                    &>div{
+                      width: 80%;
+                      height: 80%;
+                      background: url('../img/sun2.png');
+                      background-position: center center;
+                      background-size: contain;
+                      background-repeat: no-repeat;
+                      transition: all 0.2s;
+                    }
+                    &>div:hover{
+                      filter: drop-shadow(0px 0px 2px rgb(203, 255, 118));
+                      transition: all 0.2s;
+                      transform: scale(1.2);
+                      cursor: pointer;
+                    }
+                  }
+                  &>div:nth-child(2){
+                    &>div{
+                      width: 80%;
+                      height: 80%;
+                      background: url('../img/cloud2.png');
+                      background-position: center center;
+                      background-size: contain;
+                      background-repeat: no-repeat;
+                      transition: all 0.2s;
+                    }
+                    &>div:hover{
+                      transition: all 0.2s;
+                      transform: scale(1.2);
+                      filter: drop-shadow(0px 0px 2px rgb(203, 255, 118));
+                      cursor: pointer;
+                    }
+                  }
+                  &>div:nth-child(3){
+                    &>div{
+                      width: 80%;
+                      height: 80%;
+                      background: url('../img/rain2.png');
+                      background-position: center center;
+                      background-size: contain;
+                      background-repeat: no-repeat;
+                      transition: all 0.2s;
+                    }
+                    &>div:hover{
+                      transition: all 0.2s;
+                      transform: scale(1.2);
+                      filter: drop-shadow(0px 0px 2px rgb(203, 255, 118));
+                      cursor: pointer;
+                    }
+                  }
+                  &>div:nth-child(4){
+                    &>div{
+                      width: 80%;
+                      height: 80%;
+                      background: url('../img/snow2.png');
+                      background-position: center center;
+                      background-size: contain;
+                      background-repeat: no-repeat;
+                      transition: all 0.2s;
+                    }
+                    &>div:hover{
+                      transition: all 0.2s;
+                      transform: scale(1.2);
+                      filter: drop-shadow(0px 0px 2px rgb(203, 255, 118));
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
+              .moodWrap{
+                width:100%;
+                height: 33.3%;
+                @include flexCCC;
+                &>p{
+                  font-family: 'Nanum Gothic', sans-serif;
+                  text-align: center;
+                  width:30%;
+                  font-size: 16px;
+                  color: #333;
+                  text-shadow: 3px 2px 5px rgb(255 125 125 / 50%);
+                }
+                .moodS{
+                  width:70%;
+                  height:100%;
+                  @include flexRSBC;
+                  margin-bottom: 5px;
+                  border-radius: 20px;
+                  background: rgba(255, 255, 255, 0.5);
+                  box-shadow:1px 1px 5px rgba(0,0,0,0.1); 
+                  &>div{
+                    @include flexRSAC;
+                    width: 25%;
+                    height: 100%;
+                  }
+                  &>div:nth-child(1){
+                    &>div{
+                      width: 80%;
+                      height: 80%;
+                      background: url('../img/happy2.png');
+                      background-position: center center;
+                      background-size: contain;
+                      background-repeat: no-repeat;
+                      transition: all 0.2s;
+                    }
+                    &>div:hover{
+                      transition: all 0.2s;
+                      transform: scale(1.2);
+                      filter: drop-shadow(0px 0px 2px rgb(203, 255, 118));
+                      cursor: pointer;
+                    }
+                  }
+                  &>div:nth-child(2){
+                    &>div{
+                      width: 80%;
+                      height: 80%;
+                      background: url('../img/sad2.png');
+                      background-position: center center;
+                      background-size: contain;
+                      background-repeat: no-repeat;
+                      transition: all 0.2s;
+                    }
+                    &>div:hover{
+                      transition: all 0.2s;
+                      transform: scale(1.2);
+                      filter: drop-shadow(0px 0px 2px rgb(203, 255, 118));
+                      cursor: pointer;
+                    }
+                  }
+                  &>div:nth-child(3){
+                    &>div{
+                      width: 80%;
+                      height: 80%;
+                      background: url('../img/soso2.png');
+                      background-position: center center;
+                      background-size: contain;
+                      background-repeat: no-repeat;
+                      transition: all 0.2s;
+                    }
+                    &>div:hover{
+                      transition: all 0.2s;
+                      transform: scale(1.2);
+                      filter: drop-shadow(0px 0px 2px rgb(203, 255, 118));
+                      cursor: pointer;
+                    }
+                  }
+                  &>div:nth-child(4){
+                    &>div{
+                      width: 80%;
+                      height: 80%;
+                      background: url('../img/angry2.png');
+                      background-position: center center;
+                      background-size: contain;
+                      background-repeat: no-repeat;
+                      transition: all 0.2s;
+                    }
+                    &>div:hover{
+                      transition: all 0.2s;
+                      transform: scale(1.2);
+                      filter: drop-shadow(0px 0px 2px rgb(203, 255, 118));
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .bodyWriteWrap{
+            width:100%;
+            height:70%;
+            @include flexCCCC;
+            &>div{
+              width: 90%;
+              height:90%;
+              .titleP{
+                width: 100%;
+                height: 20%;
+                @include flexCCCC;
+                .diaryTitle{
+                  font-family: 'Nanum Gothic', sans-serif;
+                  font-size: 25px;
+                  border-radius: 15px;
+                  border: 0;
+                  padding: 18px;
+                  width: 84%;
+                  height: 45%;
+                  background: #fff;
+                  box-shadow: 5px 5px 8px 0 rgb(48 50 93 / 15%);
+                }
+              }
+              .bodyP{
+                width: 100%;
+                height: 63%;
+                @include flexCCCC;
+                .diaryBody{
+                  white-space: pre;
+                  font-family: 'Nanum Gothic', sans-serif;
+                  font-size: 23px;
+                  border-radius: 13px;
+                  padding: 18px;
+                  border:0;
+                  width: 84%;
+                  height: 84%;
+                  background: #fff;
+                  box-shadow: 5px 5px 8px 0 rgb(120 70 91 / 21%);
+                }
+              }
+              .btnP{
+                width: 100%;
+                height: 17%;
+                @include flexRSAC;
+                position: relative;
+                &>button{
+                  font-family: 'Yantramanav', sans-serif;
+                  font-size: 22px;
+                  border:0;
+                  width: 20%;
+                  height:60%;
+                  border-radius: 13px;
+                  position: absolute;
+                  background: #ffffff70;
+                  box-shadow: 5px 5px 6px 0 rgb(209 120 120 / 21%);
+                  top: 18px;
+                  &:hover{
+                    cursor: pointer;
+                    background: #ff7979;
+                  }
+                }
+                &>button:nth-child(1){
+                  position: absolute;
+                  left: 22px;
+                }
+                &>button:nth-child(2){
+                  position: absolute;
+                  right: 22px;
+                }
+                &>button:nth-child(3){
+                  position: absolute;
+                  right: 22px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .deleteModal{
+        transform: scale(0);
+        width: 100%;
+        height: 100%;
+        z-index: 300;
+        position: absolute;
+        background: #0000003c;
+        @include flexCCCC;
+        .popUpMent{
+          width: 55%;
+          height: 25%;
+          border-radius: 10px;
+          background: #fff;
+          box-shadow: 9px 7px 17px rgba(0,0,0,0.1);
+          @include flexCCCC;
+          &>p{
+            font-size: 35px;
+            font-family: 'Yantramanav', sans-serif;
+          }
+          &>div{
+            @include flexRSAC;
+            margin-top: 30px;
+            &>p{
+              font-family: 'Yantramanav', sans-serif;
+              font-size: 20px;
+              padding: 5px;
+              width: 50px;
+              height: 30px;
+              text-align: center;
+              line-height: 28px;
+              border-radius: 7px;
+              transition: all 0.2s;
+              box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+              cursor: pointer;
+              &:nth-child(1){
+                margin-right: 40px;
+              }
+            }
+            &>p:hover{
+              transition: all 0.2s;
+              background: #ff7979;
+              outline: 1px solid #d65656;
+              color: #fff;
+              box-shadow: inset 1px 1px 3px #e66464;
+            }
+          }
+        }
+      }
+      .readWrap{
+        transform: scale(0);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: url('../img/morning.png');
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        .titleWriteWrap{
+          width: 100%;
+          height: 30%;
+          @include flexRSC;
+          .leftTitleWrap{
+            width: 32%;
+            height:100%;
+            @include flexCCCC;
+            .titleCharacter2{
+              cursor: pointer;
+              display: inline-block;
+              width: 90%;
+              height: 90%;
+              background: url('../img/sun_bg.png');
+              filter: drop-shadow(1px 3px 2px #fff3da);
+              background-position: center center;
+              background-size: contain;
+              background-repeat: no-repeat;
+              transition: all 0.2s;
+            }
+            .titleCharacter2:hover{
+              transform: scale(1.1);
+              transition: all 0.2s;
+            }
+          }
+          .rightTitleWrap{
+            width: 65%;
+            height: 93%;
+            .dateWrap{
+              @include flexCCC;
+              width: 100%;
+              height: 33.3%;
+              margin-bottom: 5px;
+              &>p {
+                text-align: center;
+                width:30%;
+                font-size: 16px;
+                color: #333;
+                text-shadow: 3px 2px 5px rgb(255 125 125 / 50%);
+              }
+              .dateS{
+                font-size: 19px;
+                @include flexCCC;
+                text-align: center;
+                width: 70%;
+                height: 100%;
+                border-radius: 20px;
+                background: rgba(255, 255, 255, 0.5);
+                box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+              }
+            }
+            .weatherWrap{
+              width:100%;
+              height: 33.3%;
+              @include flexCCC;
+              margin-bottom: 8px;
+              &>p{
+                text-align: center;
+                width:30%;
+                font-size: 16px;
+                color: #333;
+                text-shadow: 3px 2px 5px rgb(255 125 125 / 50%);
+              }
+              .weatherS{
+                width:70%;
+                height:100%;
+                @include flexCCC;
+                border-radius: 20px;
+                background: rgba(255, 255, 255, 0.5);
+                box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+                &>div{
+                  width: 80%;
+                  height: 80%;
+                }
+              }
+            }
+            .moodWrap{
+              width:100%;
+              height: 33.3%;
+              @include flexCCC;
+              &>p{
+                text-align: center;
+                width:30%;
+                font-size: 16px;
+                color: #333;
+                text-shadow: 3px 2px 5px rgb(255 125 125 / 50%);
+              }
+              .moodS{
+                width:70%;
+                height:100%;
+                @include flexCCC;
+                margin-bottom: 5px;
+                border-radius: 20px;
+                background: rgba(255, 255, 255, 0.5);
+                box-shadow:1px 1px 5px rgba(0,0,0,0.1); 
+                &>div{
+                  width: 80%;
+                  height: 80%;
+                }
+              }
+            }
+          }
+        }
+        .bodyWriteWrap{
+          width:100%;
+          height:70%;
+          @include flexCCCC;
+          .readSpace{
+            width: 90%;
+            height:90%;
+            .titleP{
+              width: 100%;
+              height: 20%;
+              @include flexCCCC;
+              .readTitle{
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                word-break: break-all;
+                text-align: center;
+                line-height: 47px;
+                font-family: 'Nanum Gothic', sans-serif;
+                font-size: 25px;
+                border-radius: 15px;
+                border: 0;
+                padding: 18px;
+                width: 84%;
+                height: 45%;
+                background: #fff;
+                box-shadow: 5px 5px 8px 0 rgb(48 50 93 / 15%);
+              }
+            }
+            .bodyP{
+              width: 100%;
+              height: 63%;
+              @include flexCCCC;
+              .readBody{
+                font-family: 'Nanum Gothic', sans-serif;
+                font-size: 23px;
+                border-radius: 13px;
+                padding: 18px;
+                border:0;
+                width: 84%;
+                height: 84%;
+                background: #fff;
+                box-shadow: 5px 5px 8px 0 rgb(120 70 91 / 21%);
+                word-break: break-all;
+              }
+            }
+            .btnP{
+              width: 100%;
+              height: 17%;
+              @include flexRSAC;
+              &>button{
+                font-family: 'Yantramanav', sans-serif;
+                font-size: 22px;
+                border:0;
+                width: 20%;
+                height:60%;
+                border-radius: 13px;
+                background: #ffffff70;
+                box-shadow: 5px 5px 6px 0 rgb(209 120 120 / 21%);
+                &:hover{
+                  cursor: pointer;
+                  background: #ff7979;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

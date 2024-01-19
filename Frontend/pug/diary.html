@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <title>일기장</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/diary_pc.css">
+    <link rel="stylesheet" type="text/css" href="../css/diary_mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&amp;family=Yantramanav:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="../img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+    <link rel="manifest" href="../img/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../img/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <div class="wrap">
+      <section class="dateContentWrap">
+        <article class="yearZone"><i class="xi-angle-left" id="yearPrev"></i>
+          <p class="diaryYear" id="diaryYear"></p><i class="xi-angle-right" id="yearNext"></i>
+        </article>
+        <article class="monthZone" id="monthZone"></article>
+      </section>
+      <section class="listContentWrap">
+        <article class="titleMonth" id="titleMonth"></article>
+        <article class="listWrap">
+          <div class="diaryBoxWrap"> 
+            <div class="diaryBox" id="diaryBox"></div>
+          </div>
+          <div class="diaryWriteBtnWrap"> 
+            <button class="diaryWriteBtn" id="diaryWriteBtn" name="diaryWriteBtn">
+              <p>New</p>
+            </button>
+          </div>
+        </article>
+      </section>
+      <section class="wrapCRUD">
+        <section class="writeContentWrap">
+          <form class="postData" action="http://kkms4001.iptime.org:10188/create/" method="post">
+            <article class="titleWriteWrap">
+              <article class="leftTitleWrap" id="leftTitleWrap">
+                <div class="titleCharacter"></div>
+              </article>
+              <article class="rightTitleWrap">
+                <div class="dateWrap">
+                  <p>Date.</p>
+                  <div class="dateS">
+                    <input class="diaryDate" type="date" name="diaryDate" id="diaryDate" value="">
+                  </div>
+                </div>
+                <div class="weatherWrap">
+                  <p>Weather.</p>
+                  <div class="weatherS">
+                    <div class="weatherSun" id="sun">
+                      <div></div>
+                    </div>
+                    <div class="weatherCloud" id="cloud">
+                      <div></div>
+                    </div>
+                    <div class="weatherRain" id="rain">
+                      <div></div>
+                    </div>
+                    <div class="weatherSnow" id="snow">
+                      <div></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="moodWrap">
+                  <p>Mood.</p>
+                  <div class="moodS">
+                    <div class="moodHappy" id="happy">
+                      <div></div>
+                    </div>
+                    <div class="moodSad" id="sad">
+                      <div></div>
+                    </div>
+                    <div class="moodSoso" id="soso">
+                      <div></div>
+                    </div>
+                    <div class="moodAngry" id="angry">
+                      <div></div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </article>
+            <article class="bodyWriteWrap">
+              <div class="wContentWrap">
+                <p class="titleP">
+                  <input class="diaryTitle" type="text" name="diaryTitle" id="diaryTitle" value="" escapeXml="false" placeholder="제목을 입력해주세요.">
+                </p>
+                <p class="bodyP">
+                  <textarea class="diaryBody" name="diaryBody" id="diaryBody" cols="20" rows="2" wrap="hard" value="" escapeXml="false" placeholder="내용을 입력해주세요."></textarea>
+                </p>
+                <p class="btnP">
+                  <button class="cancelBtn" type="button" id="cancelBtn">Cancel</button>
+                  <button type="button" name="saveBtn" id="saveBtn">Save</button>
+                  <button type="button" name="updateBtn" id="updateBtn">Update</button>
+                </p>
+              </div>
+            </article>
+          </form>
+        </section>
+        <div class="deleteModal">
+          <div class="popUpMent">
+            <p>Delete ?</p>
+            <div class="selectYesNo">
+              <p>No </p>
+              <p>Yes</p>
+            </div>
+          </div>
+        </div>
+        <section class="readWrap" id="readWrap">
+          <article class="titleWriteWrap">
+            <article class="leftTitleWrap" id="leftTitleWrap">
+              <div class="titleCharacter2"></div>
+            </article>
+            <article class="rightTitleWrap">
+              <div class="dateWrap">
+                <p>Date.</p>
+                <div class="dateS" id="dateS"></div>
+              </div>
+              <div class="weatherWrap">
+                <p>Weather.</p>
+                <div class="weatherS" id="weatherS"></div>
+              </div>
+              <div class="moodWrap">
+                <p>Mood.</p>
+                <div class="moodS" id="moodS"></div>
+              </div>
+            </article>
+          </article>
+          <article class="bodyWriteWrap">
+            <div class="readSpace">
+              <p class="titleP"><span class="readTitle" id="readTitle"></span></p>
+              <p class="bodyP"><span class="readBody" id="readBody"></span></p>
+              <p class="btnP">
+                <button class="cancelBtnRead" type="button" id="cancelBtnRead">Cancel</button>
+                <button class="deleteBtnRead" type="button" id="deleteBtnRead">Delete</button>
+                <button class="modifyBtn" type="button" id="modifyBtn">Modify</button>
+              </p>
+            </div>
+          </article>
+        </section>
+      </section>
+    </div>
+    <script src="../js/diary.js"></script>
+  </body>
+</html>

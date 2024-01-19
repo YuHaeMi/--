@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  font-size: 10px;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p, span, div {
+  color: #333;
+}
+
+ul li {
+  list-style: none;
+}
+
+button {
+  color: #333;
+}

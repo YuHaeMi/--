@@ -1,0 +1,889 @@
+@charset "UTF-8";
+/**  
+font-family: 'Nanum Gothic', sans-serif;
+
+font-family: 'Yantramanav', sans-serif;
+**/
+html {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.0784313725);
+}
+
+.selectValue {
+  filter: drop-shadow(0px 0px 2px #a8ff79);
+  transform: scale(1.2);
+}
+
+.selectList {
+  background-color: rgba(189, 192, 237, 0.5411764706);
+}
+
+@media (min-width: 10px) and (max-width: 1023px) {
+  .wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 0;
+  }
+  .wrap .dateContentWrap {
+    overflow: hidden;
+    z-index: 200;
+    background: linear-gradient(120deg, #353A5F, #7981e3);
+    width: 20%;
+    height: 100%;
+  }
+  .wrap .dateContentWrap .yearZone {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .wrap .dateContentWrap .yearZone > i {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .wrap .dateContentWrap .yearZone > i:nth-child(3) {
+    transform: scale(0);
+  }
+  .wrap .dateContentWrap .yearZone > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .dateContentWrap .yearZone > p > span {
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    font-family: "Yantramanav", sans-serif;
+  }
+  .wrap .dateContentWrap .monthZone {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .wrap .dateContentWrap .monthZone .monthBoxWrap {
+    margin-top: 2vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .dateContentWrap .monthZone .monthBoxWrap .monthBox {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 22px;
+    background: rgba(255, 255, 255, 0.1411764706);
+    border-radius: 10px;
+  }
+  .wrap .dateContentWrap .monthZone .monthBoxWrap .monthBox > p {
+    color: #fff;
+    font-family: "Yantramanav", sans-serif;
+  }
+  .wrap .dateContentWrap .monthZone .monthBoxWrap .monthBox > p:nth-child(1) {
+    font-size: 3vw;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1019607843);
+  }
+  .wrap .dateContentWrap .monthZone .monthBoxWrap .monthBox > p:nth-child(2) {
+    font-size: 2.5vw;
+  }
+  .wrap .dateContentWrap .monthZone .monthBoxWrap:hover {
+    background: #616b93;
+    cursor: pointer;
+    cursor: pointer;
+  }
+  .wrap .listContentWrap {
+    transition: all 0.3s;
+    width: 80%;
+    height: 100%;
+    background: #fff;
+    box-shadow: 1px 1px 16px rgba(0, 0, 0, 0.16);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+  }
+  .wrap .listContentWrap .titleMonth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 13%;
+  }
+  .wrap .listContentWrap .titleMonth > p {
+    font-size: 6vw;
+    font-weight: 600;
+    font-family: "Yantramanav", sans-serif;
+  }
+  .wrap .listContentWrap .listWrap {
+    width: 100%;
+    height: 87%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .listContentWrap .listWrap .diaryBoxWrap::-webkit-scrollbar {
+    display: none;
+  }
+  .wrap .listContentWrap .listWrap .diaryBoxWrap {
+    padding: 10px;
+    width: 80%;
+    height: 80%;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+  }
+  .wrap .listContentWrap .listWrap .diaryBoxWrap .diaryBox {
+    width: 100%;
+  }
+  .wrap .listContentWrap .listWrap .diaryBoxWrap .diaryBox .listBox {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    background: rgba(99, 118, 189, 0.1098039216);
+    box-shadow: 3px 4px 8px rgba(21, 22, 26, 0.1215686275);
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .wrap .listContentWrap .listWrap .diaryBoxWrap .diaryBox .listBox .listDateBox {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .listContentWrap .listWrap .diaryBoxWrap .diaryBox .listBox .listDateBox .dateBox {
+    line-height: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(134deg, #2f3980, #676dbb);
+  }
+  .wrap .listContentWrap .listWrap .diaryBoxWrap .diaryBox .listBox .listDateBox .dateBox > p {
+    font-family: "Yantramanav", sans-serif;
+    color: #fff;
+  }
+  .wrap .listContentWrap .listWrap .diaryBoxWrap .diaryBox .listBox .listDateBox .dateBox > p:nth-child(1) {
+    margin-bottom: -6px;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .wrap .listContentWrap .listWrap .diaryBoxWrap .diaryBox .listBox .listDateBox .dateBox > p:nth-child(2) {
+    font-size: 20px;
+  }
+  .wrap .listContentWrap .listWrap .diaryBoxWrap .diaryBox .listBox .listTitleBox {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .listContentWrap .listWrap .diaryBoxWrap .diaryBox .listBox .listTitleBox > p {
+    font-family: "Nanum Gothic", sans-serif;
+    width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    font-size: 3vw;
+  }
+  .wrap .listContentWrap .listWrap .diaryBoxWrap .diaryBox .listBox:active {
+    background: rgba(76, 101, 192, 0.29);
+    cursor: pointer;
+  }
+  .wrap .listContentWrap .listWrap .diaryWriteBtnWrap {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .listContentWrap .listWrap .diaryWriteBtnWrap > button {
+    width: 20%;
+    height: 11vw;
+    border: 0;
+    background: linear-gradient(134deg, #444d92, #7d84e2);
+    border-radius: 3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .listContentWrap .listWrap .diaryWriteBtnWrap > button > p {
+    font-family: "Nanum Gothic", sans-serif;
+    color: #fff;
+    font-size: 3vw;
+  }
+  .wrap .listContentWrap .listWrap .diaryWriteBtnWrap > button:hover {
+    cursor: pointer;
+    background: #2e385e;
+    cursor: pointer;
+  }
+  .wrap .wrapCRUD {
+    transition: all 0.3s;
+    overflow: hidden;
+    position: relative;
+    width: 0%;
+    height: 100%;
+    background: url("../img/morning.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  .wrap .wrapCRUD .writeContentWrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form {
+    font-family: "Nanum Gothic", sans-serif;
+    width: 100%;
+    height: 100%;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .leftTitleWrap {
+    width: 32%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .leftTitleWrap .titleCharacter {
+    display: inline-block;
+    width: 90%;
+    height: 90%;
+    background: url("../img/sun_bg.png");
+    filter: drop-shadow(1px 3px 2px #fff3da);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap {
+    width: 65%;
+    height: 29vw;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .dateWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 33.3%;
+    margin-bottom: 5px;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .dateWrap > p {
+    font-family: "Nanum Gothic", sans-serif;
+    text-align: center;
+    width: 30%;
+    font-size: 3vw;
+    color: #333;
+    text-shadow: 3px 2px 5px rgba(255, 125, 125, 0.5);
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .dateWrap .dateS {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+    height: 100%;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .dateWrap .dateS .diaryDate {
+    color: #333;
+    background: transparent;
+    border: 0;
+    font-size: 3vw;
+    font-family: "Nanum Gothic", sans-serif;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .weatherWrap {
+    width: 100%;
+    height: 33.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .weatherWrap > p {
+    font-family: "Nanum Gothic", sans-serif;
+    text-align: center;
+    width: 30%;
+    font-size: 3vw;
+    color: #333;
+    text-shadow: 3px 2px 5px rgba(255, 125, 125, 0.5);
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .weatherWrap .weatherS {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.49);
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .weatherWrap .weatherS > div {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .weatherWrap .weatherS > div:nth-child(1) > div {
+    width: 80%;
+    height: 80%;
+    background: url("../img/sun2.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.2s;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .weatherWrap .weatherS > div:nth-child(1) > div:hover {
+    filter: drop-shadow(0px 0px 2px rgb(203, 255, 118));
+    transition: all 0.2s;
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .weatherWrap .weatherS > div:nth-child(2) > div {
+    width: 80%;
+    height: 80%;
+    background: url("../img/cloud2.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.2s;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .weatherWrap .weatherS > div:nth-child(2) > div:hover {
+    transition: all 0.2s;
+    transform: scale(1.2);
+    filter: drop-shadow(0px 0px 2px rgb(203, 255, 118));
+    cursor: pointer;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .weatherWrap .weatherS > div:nth-child(3) > div {
+    width: 80%;
+    height: 80%;
+    background: url("../img/rain2.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.2s;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .weatherWrap .weatherS > div:nth-child(3) > div:hover {
+    transition: all 0.2s;
+    transform: scale(1.2);
+    filter: drop-shadow(0px 0px 2px rgb(203, 255, 118));
+    cursor: pointer;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .weatherWrap .weatherS > div:nth-child(4) > div {
+    width: 80%;
+    height: 80%;
+    background: url("../img/snow2.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.2s;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .weatherWrap .weatherS > div:nth-child(4) > div:hover {
+    transition: all 0.2s;
+    transform: scale(1.2);
+    filter: drop-shadow(0px 0px 2px rgb(203, 255, 118));
+    cursor: pointer;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .moodWrap {
+    width: 100%;
+    height: 33.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .moodWrap > p {
+    font-family: "Nanum Gothic", sans-serif;
+    text-align: center;
+    width: 30%;
+    font-size: 3vw;
+    color: #333;
+    text-shadow: 3px 2px 5px rgba(255, 125, 125, 0.5);
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .moodWrap .moodS {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .moodWrap .moodS > div {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 25%;
+    height: 100%;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .moodWrap .moodS > div:nth-child(1) > div {
+    width: 80%;
+    height: 80%;
+    background: url("../img/happy2.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.2s;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .moodWrap .moodS > div:nth-child(1) > div:hover {
+    transition: all 0.2s;
+    transform: scale(1.2);
+    filter: drop-shadow(0px 0px 2px rgb(203, 255, 118));
+    cursor: pointer;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .moodWrap .moodS > div:nth-child(2) > div {
+    width: 80%;
+    height: 80%;
+    background: url("../img/sad2.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.2s;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .moodWrap .moodS > div:nth-child(2) > div:hover {
+    transition: all 0.2s;
+    transform: scale(1.2);
+    filter: drop-shadow(0px 0px 2px rgb(203, 255, 118));
+    cursor: pointer;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .moodWrap .moodS > div:nth-child(3) > div {
+    width: 80%;
+    height: 80%;
+    background: url("../img/soso2.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.2s;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .moodWrap .moodS > div:nth-child(3) > div:hover {
+    transition: all 0.2s;
+    transform: scale(1.2);
+    filter: drop-shadow(0px 0px 2px rgb(203, 255, 118));
+    cursor: pointer;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .moodWrap .moodS > div:nth-child(4) > div {
+    width: 80%;
+    height: 80%;
+    background: url("../img/angry2.png");
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.2s;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .titleWriteWrap .rightTitleWrap .moodWrap .moodS > div:nth-child(4) > div:hover {
+    transition: all 0.2s;
+    transform: scale(1.2);
+    filter: drop-shadow(0px 0px 2px rgb(203, 255, 118));
+    cursor: pointer;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .bodyWriteWrap {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .bodyWriteWrap > div {
+    width: 90%;
+    height: 90%;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .bodyWriteWrap > div .titleP {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .bodyWriteWrap > div .titleP .diaryTitle {
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 5vw;
+    border-radius: 15px;
+    border: 0;
+    padding: 10px;
+    width: 90%;
+    height: 50%;
+    background: #fff;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .bodyWriteWrap > div .bodyP {
+    width: 100%;
+    height: 63%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .bodyWriteWrap > div .bodyP .diaryBody {
+    white-space: pre;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 5vw;
+    border-radius: 13px;
+    padding: 10px;
+    border: 0;
+    width: 90%;
+    height: 90%;
+    background: #fff;
+    box-shadow: 5px 5px 8px 0 rgba(120, 70, 91, 0.21);
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .bodyWriteWrap > div .btnP {
+    width: 100%;
+    height: 17%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .bodyWriteWrap > div .btnP > button {
+    font-family: "Yantramanav", sans-serif;
+    font-size: 4vw;
+    border: 0;
+    width: 20%;
+    height: 60%;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.4392156863);
+    box-shadow: 5px 5px 6px 0 rgba(209, 120, 120, 0.21);
+    position: absolute;
+    top: 18px;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .bodyWriteWrap > div .btnP > button:hover {
+    cursor: pointer;
+    background: #ff7979;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .bodyWriteWrap > div .btnP > button:nth-child(1) {
+    position: absolute;
+    left: 22px;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .bodyWriteWrap > div .btnP > button:nth-child(2) {
+    position: absolute;
+    right: 22px;
+  }
+  .wrap .wrapCRUD .writeContentWrap > form .bodyWriteWrap > div .btnP > button:nth-child(3) {
+    position: absolute;
+    right: 22px;
+  }
+  .wrap .wrapCRUD .deleteModal {
+    transform: scale(0);
+    width: 100%;
+    height: 100%;
+    z-index: 300;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.2352941176);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .wrapCRUD .deleteModal .popUpMent {
+    width: 55%;
+    height: 25%;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 9px 7px 17px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .wrapCRUD .deleteModal .popUpMent > p {
+    font-size: 35px;
+    font-family: "Yantramanav", sans-serif;
+  }
+  .wrap .wrapCRUD .deleteModal .popUpMent > div {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .wrap .wrapCRUD .deleteModal .popUpMent > div > p {
+    font-family: "Yantramanav", sans-serif;
+    font-size: 20px;
+    padding: 5px;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    line-height: 28px;
+    border-radius: 7px;
+    transition: all 0.2s;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  .wrap .wrapCRUD .deleteModal .popUpMent > div > p:nth-child(1) {
+    margin-right: 40px;
+  }
+  .wrap .wrapCRUD .deleteModal .popUpMent > div > p:hover {
+    transition: all 0.2s;
+    background: #ff7979;
+    outline: 1px solid #d65656;
+    color: #fff;
+    box-shadow: inset 1px 1px 3px #e66464;
+  }
+  .wrap .wrapCRUD .readWrap {
+    transform: scale(0);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("../img/morning.png");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .wrap .wrapCRUD .readWrap .titleWriteWrap {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .wrap .wrapCRUD .readWrap .titleWriteWrap .leftTitleWrap {
+    width: 32%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .wrapCRUD .readWrap .titleWriteWrap .leftTitleWrap .titleCharacter2 {
+    display: inline-block;
+    width: 90%;
+    height: 90%;
+    background: url("../img/sun_bg.png");
+    filter: drop-shadow(1px 3px 2px #fff3da);
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .wrap .wrapCRUD .readWrap .titleWriteWrap .rightTitleWrap {
+    width: 65%;
+    height: 29vw;
+  }
+  .wrap .wrapCRUD .readWrap .titleWriteWrap .rightTitleWrap .dateWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 33.3%;
+    margin-bottom: 5px;
+  }
+  .wrap .wrapCRUD .readWrap .titleWriteWrap .rightTitleWrap .dateWrap > p {
+    text-align: center;
+    width: 30%;
+    font-size: 3vw;
+    color: #333;
+    text-shadow: 3px 2px 5px rgba(255, 125, 125, 0.5);
+  }
+  .wrap .wrapCRUD .readWrap .titleWriteWrap .rightTitleWrap .dateWrap .dateS {
+    font-size: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 70%;
+    height: 100%;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  .wrap .wrapCRUD .readWrap .titleWriteWrap .rightTitleWrap .weatherWrap {
+    width: 100%;
+    height: 33.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .wrap .wrapCRUD .readWrap .titleWriteWrap .rightTitleWrap .weatherWrap > p {
+    text-align: center;
+    width: 30%;
+    font-size: 3vw;
+    color: #333;
+    text-shadow: 3px 2px 5px rgba(255, 125, 125, 0.5);
+  }
+  .wrap .wrapCRUD .readWrap .titleWriteWrap .rightTitleWrap .weatherWrap .weatherS {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  .wrap .wrapCRUD .readWrap .titleWriteWrap .rightTitleWrap .weatherWrap .weatherS > div {
+    width: 80%;
+    height: 80%;
+  }
+  .wrap .wrapCRUD .readWrap .titleWriteWrap .rightTitleWrap .moodWrap {
+    width: 100%;
+    height: 33.3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .wrapCRUD .readWrap .titleWriteWrap .rightTitleWrap .moodWrap > p {
+    text-align: center;
+    width: 30%;
+    font-size: 3vw;
+    color: #333;
+    text-shadow: 3px 2px 5px rgba(255, 125, 125, 0.5);
+  }
+  .wrap .wrapCRUD .readWrap .titleWriteWrap .rightTitleWrap .moodWrap .moodS {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  .wrap .wrapCRUD .readWrap .titleWriteWrap .rightTitleWrap .moodWrap .moodS > div {
+    width: 80%;
+    height: 80%;
+  }
+  .wrap .wrapCRUD .readWrap .bodyWriteWrap {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .wrapCRUD .readWrap .bodyWriteWrap .readSpace {
+    width: 90%;
+    height: 90%;
+  }
+  .wrap .wrapCRUD .readWrap .bodyWriteWrap .readSpace .titleP {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .wrapCRUD .readWrap .bodyWriteWrap .readSpace .titleP .readTitle {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    text-align: left;
+    line-height: 12vw;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 4vw;
+    border-radius: 15px;
+    border: 0;
+    padding: 10px;
+    width: 90%;
+    height: 50%;
+    background: #fff;
+  }
+  .wrap .wrapCRUD .readWrap .bodyWriteWrap .readSpace .bodyP {
+    width: 100%;
+    height: 63%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .wrap .wrapCRUD .readWrap .bodyWriteWrap .readSpace .bodyP .readBody {
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 4vw;
+    border-radius: 13px;
+    padding: 10px;
+    border: 0;
+    width: 90%;
+    height: 90%;
+    background: #fff;
+    word-break: break-all;
+    box-shadow: 5px 5px 8px 0 rgba(120, 70, 91, 0.21);
+  }
+  .wrap .wrapCRUD .readWrap .bodyWriteWrap .readSpace .btnP {
+    width: 100%;
+    height: 17%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .wrap .wrapCRUD .readWrap .bodyWriteWrap .readSpace .btnP > button {
+    font-family: "Yantramanav", sans-serif;
+    font-size: 4vw;
+    border: 0;
+    width: 20%;
+    height: 60%;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.4392156863);
+    box-shadow: 5px 5px 6px 0 rgba(209, 120, 120, 0.21);
+  }
+  .wrap .wrapCRUD .readWrap .bodyWriteWrap .readSpace .btnP > button:hover {
+    cursor: pointer;
+    background: #ff7979;
+  }
+}
